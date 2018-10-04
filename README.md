@@ -1,5 +1,5 @@
 # NURBS UI
-A simple UI for understanding Non-Uniform Rational B-Splines (NURBS).
+A simple UI for understanding Non-Uniform Rational B-Splines (NURBS) written in **Python**.
 
 ## User Interface
 The user interface is divided in two parts.
