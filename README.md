@@ -18,5 +18,5 @@ A sequence os examples showing the incredible versatility that can be achieved u
 # Gallery
 Few screenshots of the program.
 
-![2D exemple](...)
-![2D exemple](...)
+![2D exemple](https://github.com/Fernandohf/NURBS/blob/master/media/ex2d.png)
+![3D exemple](https://github.com/Fernandohf/NURBS/blob/master/media/ex3d.png)
