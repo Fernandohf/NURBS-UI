@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 import numpy
 import mpl_toolkits.mplot3d.axes3d as p3
 
-#initialPoints2D = numpy.array([(28, 6), (6, 5), (40, 0), (6, 2), (5, 10), (-8, 50), (4, 25)], float)
+# initialPoints2D = numpy.array([(28, 6), (6, 5), (40, 0), (6, 2), (5, 10), (-8, 50), (4, 25)], float)
 initialPoints3D = numpy.array([(28, 44, 6), (20, 6, 5), (40, -10, 0), (68, 0, 2), (6, 5, 10), (-8, 50, 50), (4, -50, 25)], float)    # PONTOS INICIAIS
 divisions = 100                        # NUMERO DE SEGMENTOS
 degree = 6                         # GRAU DO POLINOMIO

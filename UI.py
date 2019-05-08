@@ -11,7 +11,7 @@ import tkinter.ttk as ttk
 matplotlib.use('TkAgg')
 
 
-################# CLASSES #########################
+# UI Class
 class UIVariables:
     fig = plt.figure()
 
@@ -440,12 +440,7 @@ def callExButton(n):
     examplesVar.show()
 
 
-# def changeCursor(type):
-
-
-
 # Changes current plot view position
-
 def rotateView(fig, azim, elev):
     if ui.dim2d3d == '2D':
         return
@@ -454,8 +449,7 @@ def rotateView(fig, azim, elev):
         fig.elev += elev
 
 
-###################### UI ###############################
-
+# UI Settings
 if ui.dim2d3d == '3D':
     ui.canvas.get_tk_widget().bind("<B1-Motion>", onDrag)
     ui.canvas.get_tk_widget().bind("<Button-1>", onLeftClick)
@@ -469,7 +463,6 @@ else:
 # FIRST COLUMN
 framePButtons = ttk.Frame(master=sideFrame, padding="2")
 buttonPlusP = ttk.Button(master=framePButtons, text="+ Pontos", command=plusPoint, width=14)
-
 buttonMinusP = ttk.Button(master=framePButtons, text="- Pontos", command=minusPoint, width=14)
 
 # SECOND COLUMN
@@ -482,7 +475,6 @@ radio3D = ttk.Radiobutton(master=sideFrame, text='3D', variable=ui.dim2d3d, valu
 # INITIAL VALUES
 spinboxDegree.delete(0, END)
 spinboxDegree.insert(0, ui.ndeg)
-
 # spinboxDegree.bind("<Increment>", updateAll)
 
 labelSeg = ttk.Label(master=sideFrame, text="Segmentos:")
@@ -499,14 +491,12 @@ label3D2D = ttk.Label(master=sideFrame, text="Dimensão dos pontos:")
 
 # THIRD COLUMN
 labelExamples = ttk.Label(master=sideFrame, text=">>>Exemplos<<<")
-
 labelExamples2D = ttk.Label(master=sideFrame, text="Exemplos 2D:")
 buttonEx1 = ttk.Button(master=sideFrame, text="Exemplo 1", command=lambda: callExButton(1))
 buttonEx2 = ttk.Button(master=sideFrame, text="Exemplo 2", command=lambda: callExButton(2))
 buttonEx3 = ttk.Button(master=sideFrame, text="Exemplo 3", command=lambda: callExButton(3))
 buttonEx4 = ttk.Button(master=sideFrame, text="Exemplo 4", command=lambda: callExButton(4))
 buttonEx5 = ttk.Button(master=sideFrame, text="Exemplo 5", command=lambda: callExButton(5))
-
 buttonEx6 = ttk.Button(master=sideFrame, text="Exemplo 6", command=lambda: callExButton(6))
 buttonEx7 = ttk.Button(master=sideFrame, text="Exemplo 7", command=lambda: callExButton(7))
 buttonEx8 = ttk.Button(master=sideFrame, text="Exemplo 8", command=lambda: callExButton(8))
@@ -515,8 +505,7 @@ buttonEx10 = ttk.Button(master=sideFrame, text="Exemplo 10", command=lambda: cal
 
 labelExamples3D = ttk.Label(master=sideFrame, text="Exemplos 3D:")
 
-########### Layout Management ####################
-
+# Layout Management
 ui.canvas.get_tk_widget().pack(side=LEFT)
 sideFrame.pack(side=LEFT, fill=BOTH, expand=YES)
 
@@ -559,5 +548,3 @@ buttonEx10.grid(column=5, row=6, sticky=(E, N))
 updateSideFrame()
 
 root.mainloop()
-# If you put root.destroy() here, it will cause an error if
-# the window is closed with the window manager.
