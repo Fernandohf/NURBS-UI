@@ -20,6 +20,16 @@ The following properties of the curve can be altered:
 
 A sequence os examples showing the incredible versatility that can be achieved using NURBS.
 
+## Requirements
+
+The only requirement is the Numpy Library.
+
+- Numpy=>1.1
+
+## How to Run
+
+Just execute the `main.py` script.
+
 ## Gallery
 
 Few screenshots of the program.
