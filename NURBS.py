@@ -1,13 +1,13 @@
 
-import matplotlib
 from matplotlib import pyplot as plt
 import numpy
 import mpl_toolkits.mplot3d.axes3d as p3
 
 # initialPoints2D = numpy.array([(28, 6), (6, 5), (40, 0), (6, 2), (5, 10), (-8, 50), (4, 25)], float)
-initialPoints3D = numpy.array([(28, 44, 6), (20, 6, 5), (40, -10, 0), (68, 0, 2), (6, 5, 10), (-8, 50, 50), (4, -50, 25)], float)    # PONTOS INICIAIS
-divisions = 100                        # NUMERO DE SEGMENTOS
-degree = 6                         # GRAU DO POLINOMIO
+initialPoints3D = numpy.array([(28, 44, 6), (20, 6, 5), (40, -10, 0),
+                               (68, 0, 2), (6, 5, 10), (-8, 50, 50), (4, -50, 25)], float)  # PONTOS INICIAIS
+divisions = 100                                                                             # NUMERO DE SEGMENTOS
+degree = 6                                                                                  # GRAU DO POLINOMIO
 
 
 def nurbs(p0=numpy.array([(0, 3), (2, 0), (1, 7), (6, 11), (7, 1)], float), deg=2, div=1000, *matrix_w):
@@ -18,14 +18,11 @@ def nurbs(p0=numpy.array([(0, 3), (2, 0), (1, 7), (6, 11), (7, 1)], float), deg=
         Exception("Invalid number of points for this degree.")
     m = deg + n + 1
     matrix_u = numpy.zeros(m)
-    #print(matrix_u)
     if matrix_w is None:
         matrix_w = numpy.ones(n)        # PESO
     else:
         matrix_w = matrix_w[0]
-    #matrix_w[1] = 5                #TESTANDO PESO
-    #matrix_w[5] = 2              # TESTANDO PESO
-    #matrix_w[4] = 10  # TESTANDO PESO
+
     for i in range(m):
         if i < deg + 1:
             matrix_u[i] = 0
@@ -34,11 +31,9 @@ def nurbs(p0=numpy.array([(0, 3), (2, 0), (1, 7), (6, 11), (7, 1)], float), deg=
         else:
             count += 1
             matrix_u[i] = count * (1 / (1 + m - 2 * (deg + 1)))
-    #print(matrix_u)
     u = 0.0
     c = 0
     matrix_p = numpy.zeros((div + 1, dim))
-    # print(matrix_p)
     while u <= 1:
         sum_px = 0
         sum_py = 0
@@ -64,9 +59,6 @@ def nurbs(p0=numpy.array([(0, 3), (2, 0), (1, 7), (6, 11), (7, 1)], float), deg=
     matrix_p[div, 0] = p0[n - 1, 0]
     matrix_p[div, 1] = p0[n - 1, 1]
 
-  # print(matrix_p[:, 1])
-    #plt.plot(matrix_p[:, 0], matrix_p[:, 1])
-    #plt.plot(p0[:, 0],p0[:, 1],'bo')
     return matrix_p
 
 
@@ -111,13 +103,13 @@ def plot_nurbs(control_points, data):
 #        ax.scatter(control_points[:, 0], control_points[:, 1], control_points[:, 2])
         for i in range(len(control_points)):  # plot each point + it's index as text above
             ax.scatter(control_points[i, 0], control_points[i, 1], control_points[i, 2])
-            ax.text(control_points[i, 0], control_points[i, 1], control_points[i, 2]+1, '%s' % (str(i+1)), size=15, zorder
-            =3, color='k')
+            ax.text(control_points[i, 0], control_points[i, 1], control_points[i, 2]+1, '%s' % (str(i+1)),
+                    size=15, zorder=3, color='k')
         ax.plot(data[:, 0], data[:, 1], data[:, 2])
         return fig, ax
     else:
         Exception("Os pontos devem ser 2D ou 3D.")
-    #plt.show()
+    # plt.show()
 
 
-#plot_nurbs(initialPoints3D,nurbs(initialPoints3D,2,100)) # TESTING
+# plot_nurbs(initialPoints3D,nurbs(initialPoints3D,2,100)) # TESTING
