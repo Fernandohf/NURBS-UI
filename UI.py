@@ -5,7 +5,7 @@ import math
 import numpy
 import random
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from tkinter import Grid, Tk, Canvas, VERTICAL, FALSE, Spinbox, LEFT, BOTH, YES, N, S, E, W, END, filedialog
+from tkinter import Grid, Tk, Canvas, VERTICAL, FALSE, Spinbox, LEFT, BOTH, YES, N, S, E, W, END
 import tkinter.ttk as ttk
 
 matplotlib.use('TkAgg')
@@ -96,7 +96,7 @@ class UIVariables:
 
             self.npoints -= 1
             # self.updateFunction()
-        except:
+        except Exception:
             pass
 
     def updateFunction(self):
@@ -310,7 +310,7 @@ def updateSideFrame():
     global entryPoints
     global labelPointsW
     global entryPointsW
-    # FIRST COLUMNN
+    # FIRST COLUMN
     for widget in framePoints.winfo_children():
         widget.destroy()
     labelPoints = [None] * (ui.npoints)
@@ -359,17 +359,17 @@ def getUIVariables():
             ui.points[i] = [float(j) for j in num]
             tempstring = entryPointsW[i].get()
             ui.weight[i] = float(tempstring)
-        except:
+        except Exception:
             Exception("Cuidado!")
 
     # SECOND COLUMN
     try:
         ui.nseg = int(spinboxSeg.get())
-    except:
+    except Exception:
         Exception("Valor inválido!")
     try:
         ui.ndeg = int(spinboxDegree.get())
-    except:
+    except Exception:
         Exception("Valor inválido!")
     if radio3D.focus():
         ui.dim2d3d = '3D'
