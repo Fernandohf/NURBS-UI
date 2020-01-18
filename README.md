@@ -22,9 +22,10 @@ A sequence os examples showing the incredible versatility that can be achieved u
 
 ## Requirements
 
-The only requirement is the Numpy Library.
+ Just execute the command `pip install -r requirements.txt`
 
-- Numpy=>1.1
+- Numpy>=1.1
+- Matplotlib>=3.0
 
 ## How to Run
 
@@ -32,7 +33,7 @@ Just execute the `main.py` script.
 
 ## Gallery
 
-Few screenshots of the program.
+Screenshots of the program.
 
 ![2D example](https://github.com/Fernandohf/NURBS/blob/master/media/ex2d.png)
 ![3D example](https://github.com/Fernandohf/NURBS/blob/master/media/ex3d.png)
