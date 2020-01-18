@@ -42,7 +42,6 @@ class UIVariables:
         self.plotGraph()
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.master)
         self.canvas.draw()
-        self.canvas.show()
 
     def plotGraph(self):
         plt.clf()
@@ -103,7 +102,6 @@ class UIVariables:
         self.subplot.clear()
         self.plotGraph()
         self.canvas.draw()
-        self.canvas.show()
         updateSideFrame()
 
 
@@ -403,7 +401,6 @@ def updateAll(s=None):
     getUIVariables()
     updateSideFrame()
     ui.updateFunction()
-    ui.canvas.show()
 
 
 def updateView():
