@@ -6,10 +6,8 @@ import mpl_toolkits.mplot3d.axes3d as p3
 # initialPoints2D = numpy.array([(28, 6), (6, 5), (40, 0), (6, 2), (5, 10), (-8, 50), (4, 25)], float)
 initialPoints3D = numpy.array([(28, 44, 6), (20, 6, 5), (40, -10, 0),
                                (68, 0, 2), (6, 5, 10), (-8, 50, 50), (4, -50, 25)], float)  # PONTOS INICIAIS
-# NUMERO DE SEGMENTOS
-divisions = 100
-# GRAU DO POLINOMIO
-degree = 6
+divisions = 100                                                                             # NUMERO DE SEGMENTOS
+degree = 6                                                                                  # GRAU DO POLINOMIO
 
 
 def nurbs(p0=numpy.array([(0, 3), (2, 0), (1, 7), (6, 11), (7, 1)], float), deg=2, div=1000, *matrix_w):
@@ -94,19 +92,17 @@ def plot_nurbs(control_points, data):
     size = len(control_points)
     if dimension == 2:
         plt.plot(data[:, 0], data[:, 1])
-        plt.plot(control_points[:, 0], control_points[:, 1], 'ro',)
+        plt.plot(control_points[:, 0], control_points[:, 1],'ro',)
         c = 0
         for i, j in zip(control_points[:, 0], control_points[:, 1]):
             c += 1
-            plt.annotate('%s' % c, xy=(i, j), xytext=(
-                5, 0), textcoords='offset points')
+            plt.annotate('%s' % c, xy=(i, j), xytext=(5, 0), textcoords='offset points')
         return fig, 0
     elif dimension == 3:
         ax = p3.Axes3D(fig)
 #        ax.scatter(control_points[:, 0], control_points[:, 1], control_points[:, 2])
         for i in range(len(control_points)):  # plot each point + it's index as text above
-            ax.scatter(control_points[i, 0],
-                       control_points[i, 1], control_points[i, 2])
+            ax.scatter(control_points[i, 0], control_points[i, 1], control_points[i, 2])
             ax.text(control_points[i, 0], control_points[i, 1], control_points[i, 2]+1, '%s' % (str(i+1)),
                     size=15, zorder=3, color='k')
         ax.plot(data[:, 0], data[:, 1], data[:, 2])

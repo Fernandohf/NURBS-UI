@@ -8,7 +8,6 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from tkinter import Grid, Tk, Canvas, VERTICAL, FALSE, Spinbox, LEFT, BOTH, YES, N, S, E, W, END
 import tkinter.ttk as ttk
 
-
 matplotlib.use('TkAgg')
 
 
@@ -57,13 +56,11 @@ class UIVariables:
             c = 0
             for i, j in zip(self.points[:, 0], self.points[:, 1]):
                 c += 1
-                self.subplot.annotate('%s' % c, xy=(i, j), xytext=(
-                    5, 0), textcoords='offset points')
+                self.subplot.annotate('%s' % c, xy=(i, j), xytext=(5, 0), textcoords='offset points')
         elif self.dim2d3d == '3D':
             self.subplot = self.fig.add_subplot(111, projection='3d')
             for i in range(self.npoints):
-                self.subplot.scatter(
-                    self.points[i, 0], self.points[i, 1], self.points[i, 2])
+                self.subplot.scatter(self.points[i, 0], self.points[i, 1], self.points[i, 2])
                 self.subplot.text(self.points[i, 0] + 1, self.points[i, 1] + 1, self.points[i, 2], '%s' % (str(i + 1)),
                                   size=15, zorder=3, color='k')
             self.subplot.plot(data[:, 0], data[:, 1], data[:, 2])
@@ -115,16 +112,13 @@ class Examples:
 
     p[1] = numpy.array([[0, 0], [0, 5], [5, 5], [10, 5], [10, 0]])
     d[1] = 3
-    w[1] = numpy.array(
-        [1, 1.0 / math.sqrt(2.0), 1.0, 1.0 / math.sqrt(2.0), 1.0])
+    w[1] = numpy.array([1, 1.0 / math.sqrt(2.0), 1.0, 1.0 / math.sqrt(2.0), 1.0])
 
-    p[2] = numpy.array([[0, 0], [1, 1.5], [2, 3], [
-                       3, 4.5], [4, 6], [5, 7.5], [6, 9]])
+    p[2] = numpy.array([[0, 0], [1, 1.5], [2, 3], [3, 4.5], [4, 6], [5, 7.5], [6, 9]])
     d[2] = 3
     w[2] = numpy.array([1, 1, 1, 1, 1, 1, 1])
 
-    p[3] = numpy.array([[-10, 0], [-5, 5], [0, 4], [8, 4],
-                       [10, 4], [15, 3], [20, 1], [20, 0]])
+    p[3] = numpy.array([[-10, 0], [-5, 5], [0, 4], [8, 4], [10, 4], [15, 3], [20, 1], [20, 0]])
     d[3] = 4
     w[3] = numpy.array([1, 5, 1, 1, 1, 1, 1, 1])
 
@@ -136,28 +130,23 @@ class Examples:
     d[5] = 4
     w[5] = numpy.array([1, 5, 15, 1, 1])
 
-    p[6] = numpy.array(
-        [[0, 0, 5], [0, 5, 1], [-5, -5, 2], [-8, 10, 5], [-10, 0, -2]])
+    p[6] = numpy.array([[0, 0, 5], [0, 5, 1], [-5, -5, 2], [-8, 10, 5], [-10, 0, -2]])
     d[6] = 3
     w[6] = numpy.array([1, 1, 1, 1, 1])
 
-    p[7] = numpy.array(
-        [[0, 0, 5], [0, 5, 1], [-5, -5, 2], [-8, 10, 5], [-10, 0, -2]])
+    p[7] = numpy.array([[0, 0, 5], [0, 5, 1], [-5, -5, 2], [-8, 10, 5], [-10, 0, -2]])
     d[7] = 3
     w[7] = numpy.array([1, 6, 1, 8, 1])
 
-    p[8] = numpy.array(
-        [[0, 0, 5], [0, 5, 1], [-5, -5, 2], [-8, 10, 5], [-10, 0, -2]])
+    p[8] = numpy.array([[0, 0, 5], [0, 5, 1], [-5, -5, 2], [-8, 10, 5], [-10, 0, -2]])
     d[8] = 6
     w[8] = numpy.array([1, 6, 1, 8, 1])
 
-    p[9] = numpy.array(
-        [[0, 0, 0], [0, 5, 0], [5, 5, 0], [10, 5, 0], [10, 0, 0]])
+    p[9] = numpy.array([[0, 0, 0], [0, 5, 0], [5, 5, 0], [10, 5, 0], [10, 0, 0]])
     d[9] = 2
     w[9] = numpy.array([1, 6, 1, 8, 1])
 
-    p[10] = numpy.array([[0, 0, 0], [0, 5, 0], [5, 5, 0], [
-                        10, 0, 0], [10, 5, 5], [5, 0, 0], [0, 0, 0]])
+    p[10] = numpy.array([[0, 0, 0], [0, 5, 0], [5, 5, 0], [10, 0, 0], [10, 5, 5], [5, 0, 0], [0, 0, 0]])
     d[10] = 2
     w[10] = numpy.array([1, 1, 1, 1, 1, 1, 1])
 
@@ -229,17 +218,13 @@ class ClickDrag:
 
 # Settings
 root = Tk()
-root.tk.call("source", "azure.tcl")
-root.tk.call("set_theme", "light")
-# root.tk.call("set_theme")
 Grid.rowconfigure(root, 0, weight=1)
 Grid.columnconfigure(root, 0, weight=1)
 root.resizable(FALSE, FALSE)
 
 # Global Variables
 initialPoints3D = numpy.array(
-    [(28, 44, 6), (20, 6, 5), (40, -10, 0), (68, 0, 2),
-     (6, 5, 10), (-8, 50, 50), (4, -50, 25)],
+    [(28, 44, 6), (20, 6, 5), (40, -10, 0), (68, 0, 2), (6, 5, 10), (-8, 50, 50), (4, -50, 25)],
     float)  # PONTOS INICIAIS
 initialPoints2D = numpy.array([(0, 0), (2, 6), (1, 8), (8, 10), (5, 20), (15, 16), (20, 20)],
                               float)  # PONTOS INICIAIS
@@ -265,12 +250,10 @@ mainFrame.rowconfigure(0, weight=1)
 sideFrame = ttk.Frame(mainFrame, padding="3")
 
 frameScrollable = ttk.Frame(sideFrame)
-canvasPoints = Canvas(frameScrollable, borderwidth=0, width=300, height=400)
-labelMainPoints = ttk.Label(
-    master=sideFrame, text="Pontos do Polimômio:", padding="2")
+canvasPoints = Canvas(frameScrollable, borderwidth=0, width=200, height=380)
+labelMainPoints = ttk.Label(master=sideFrame, text="Pontos do Polimômio:", padding="2")
 framePoints = ttk.Frame(master=canvasPoints)
-framePoints.bind("<Configure>", lambda event,
-                 canvasPoints=canvasPoints: onFrameConfigure(canvasPoints))
+framePoints.bind("<Configure>", lambda event, canvasPoints=canvasPoints: onFrameConfigure(canvasPoints))
 
 scrollPoints = ttk.Scrollbar(frameScrollable, orient=VERTICAL)
 canvasPoints.configure(yscrollcommand=scrollPoints.set)
@@ -323,22 +306,18 @@ def updateSideFrame():
     labelPointsW = [None] * (ui.npoints)
     entryPointsW = [None] * (ui.npoints)
     for p in range(ui.npoints):
-        labelPoints[p] = ttk.Label(
-            master=framePoints, text="P%i" % (p + 1), padding="1", width=4)
+        labelPoints[p] = ttk.Label(master=framePoints, text="P%i" % (p + 1), padding="1", width=4)
         entryPoints[p] = ttk.Entry(master=framePoints, width=18)
         entryPoints[p].bind('<Return>', updateAll)
         entryPoints[p].delete(0, END)
         # entryPoints[p].inset(0, ui.points[p])
         if ui.dim2d3d == '2D':
-            entryPoints[p].insert(0, ' {0} , {1}'.format(
-                ui.points[p, 0], ui.points[p, 1]))
+            entryPoints[p].insert(0, ' {0} , {1}'.format(ui.points[p, 0], ui.points[p, 1]))
         else:
-            entryPoints[p].insert(0, ' {0} , {1} , {2} '.format(
-                ui.points[p, 0], ui.points[p, 1], ui.points[p, 2]))
+            entryPoints[p].insert(0, ' {0} , {1} , {2} '.format(ui.points[p, 0], ui.points[p, 1], ui.points[p, 2]))
         entryPoints[p].grid(column=1, row=p, sticky=E)
         labelPoints[p].grid(column=0, row=p, sticky=W)
-        labelPointsW[p] = ttk.Label(
-            master=framePoints, text="W%i" % (p + 1), padding="1", width=4)
+        labelPointsW[p] = ttk.Label(master=framePoints, text="W%i" % (p + 1), padding="1", width=4)
         entryPointsW[p] = ttk.Entry(master=framePoints, width=4)
         entryPointsW[p].bind('<Return>', updateAll)
         entryPointsW[p].delete(0, END)
@@ -470,20 +449,15 @@ else:
 
 # FIRST COLUMN
 framePButtons = ttk.Frame(master=sideFrame, padding="2")
-buttonPlusP = ttk.Button(master=framePButtons,
-                         text="+ Pontos", command=plusPoint, width=14)
-buttonMinusP = ttk.Button(master=framePButtons,
-                          text="- Pontos", command=minusPoint, width=14)
+buttonPlusP = ttk.Button(master=framePButtons, text="+ Pontos", command=plusPoint, width=14)
+buttonMinusP = ttk.Button(master=framePButtons, text="- Pontos", command=minusPoint, width=14)
 
 # SECOND COLUMN
 labelSettings = ttk.Label(master=sideFrame, text="Configurações da NURBS:")
 labelDegree = ttk.Label(master=sideFrame, text="Grau:")
-spinboxDegree = Spinbox(master=sideFrame, from_=1, to=100,
-                        textvariable=ui.ndeg, width=4, command=updateAll)
-radio2D = ttk.Radiobutton(master=sideFrame, text='2D',
-                          variable=ui.dim2d3d, value='2D', command=changeDim)
-radio3D = ttk.Radiobutton(master=sideFrame, text='3D',
-                          variable=ui.dim2d3d, value='3D', command=changeDim)
+spinboxDegree = Spinbox(master=sideFrame, from_=1, to=100, textvariable=ui.ndeg, width=4, command=updateAll)
+radio2D = ttk.Radiobutton(master=sideFrame, text='2D', variable=ui.dim2d3d, value='2D', command=changeDim)
+radio3D = ttk.Radiobutton(master=sideFrame, text='3D', variable=ui.dim2d3d, value='3D', command=changeDim)
 
 # INITIAL VALUES
 spinboxDegree.delete(0, END)
@@ -491,8 +465,7 @@ spinboxDegree.insert(0, ui.ndeg)
 # spinboxDegree.bind("<Increment>", updateAll)
 
 labelSeg = ttk.Label(master=sideFrame, text="Segmentos:")
-spinboxSeg = Spinbox(master=sideFrame, from_=1, to=5000,
-                     textvariable=ui.nseg, width=7, command=updateAll)
+spinboxSeg = Spinbox(master=sideFrame, from_=1, to=5000, textvariable=ui.nseg, width=7, command=updateAll)
 
 spinboxDegree.bind('<Return>', updateAll)
 spinboxSeg.bind('<Return>', updateAll)
@@ -506,26 +479,16 @@ label3D2D = ttk.Label(master=sideFrame, text="Dimensão dos pontos:")
 # THIRD COLUMN
 labelExamples = ttk.Label(master=sideFrame, text=">>>Exemplos<<<")
 labelExamples2D = ttk.Label(master=sideFrame, text="Exemplos 2D:")
-buttonEx1 = ttk.Button(master=sideFrame, text="Exemplo 1",
-                       command=lambda: callExButton(1))
-buttonEx2 = ttk.Button(master=sideFrame, text="Exemplo 2",
-                       command=lambda: callExButton(2))
-buttonEx3 = ttk.Button(master=sideFrame, text="Exemplo 3",
-                       command=lambda: callExButton(3))
-buttonEx4 = ttk.Button(master=sideFrame, text="Exemplo 4",
-                       command=lambda: callExButton(4))
-buttonEx5 = ttk.Button(master=sideFrame, text="Exemplo 5",
-                       command=lambda: callExButton(5))
-buttonEx6 = ttk.Button(master=sideFrame, text="Exemplo 6",
-                       command=lambda: callExButton(6))
-buttonEx7 = ttk.Button(master=sideFrame, text="Exemplo 7",
-                       command=lambda: callExButton(7))
-buttonEx8 = ttk.Button(master=sideFrame, text="Exemplo 8",
-                       command=lambda: callExButton(8))
-buttonEx9 = ttk.Button(master=sideFrame, text="Exemplo 9",
-                       command=lambda: callExButton(9))
-buttonEx10 = ttk.Button(master=sideFrame, text="Exemplo 10",
-                        command=lambda: callExButton(10))
+buttonEx1 = ttk.Button(master=sideFrame, text="Exemplo 1", command=lambda: callExButton(1))
+buttonEx2 = ttk.Button(master=sideFrame, text="Exemplo 2", command=lambda: callExButton(2))
+buttonEx3 = ttk.Button(master=sideFrame, text="Exemplo 3", command=lambda: callExButton(3))
+buttonEx4 = ttk.Button(master=sideFrame, text="Exemplo 4", command=lambda: callExButton(4))
+buttonEx5 = ttk.Button(master=sideFrame, text="Exemplo 5", command=lambda: callExButton(5))
+buttonEx6 = ttk.Button(master=sideFrame, text="Exemplo 6", command=lambda: callExButton(6))
+buttonEx7 = ttk.Button(master=sideFrame, text="Exemplo 7", command=lambda: callExButton(7))
+buttonEx8 = ttk.Button(master=sideFrame, text="Exemplo 8", command=lambda: callExButton(8))
+buttonEx9 = ttk.Button(master=sideFrame, text="Exemplo 9", command=lambda: callExButton(9))
+buttonEx10 = ttk.Button(master=sideFrame, text="Exemplo 10", command=lambda: callExButton(10))
 
 labelExamples3D = ttk.Label(master=sideFrame, text="Exemplos 3D:")
 
@@ -544,14 +507,15 @@ framePButtons.grid(column=0, row=13, sticky=(N, W))
 buttonPlusP.pack(side=LEFT, fill=BOTH, expand=YES)
 buttonMinusP.pack(side=LEFT, fill=BOTH, expand=YES)
 
+
 labelSettings.grid(column=2, row=0, columnspan=2, sticky=(W, N))
 labelDegree.grid(column=2, row=1, sticky=(W, N), columnspan=2)
 spinboxDegree.grid(column=3, row=1, sticky=(E, N))
 labelSeg.grid(column=2, row=2, sticky=(W, N))
 spinboxSeg.grid(column=3, row=2, sticky=(E, N))
 label3D2D.grid(column=2, row=3, columnspan=2, sticky=(W, N))
-radio2D.grid(column=2, row=4, sticky=(W, N))
-radio3D.grid(column=3, row=4, sticky=(E, N))
+radio2D.grid(column=2, row=4, sticky=(E, N))
+radio3D.grid(column=2, row=4, sticky=(W, N))
 
 labelExamples.grid(column=4, row=0, columnspan=2)
 

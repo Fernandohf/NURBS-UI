@@ -27,8 +27,6 @@ A sequence os examples showing the incredible versatility that can be achieved u
 - Numpy>=1.1
 - Matplotlib>=3.0
 
-Thanks [rdbende](https://github.com/rdbende) for the Theme available [here](https://github.com/rdbende/Azure-ttk-theme)
-
 ## How to Run
 
 Just execute the `main.py` script.
