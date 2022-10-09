@@ -35,5 +35,5 @@ Just execute the `main.py` script.
 
 Screenshots of the program.
 
-![2D example](https://github.com/Fernandohf/NURBS/blob/master/media/ex2d.png)
-![3D example](https://github.com/Fernandohf/NURBS/blob/master/media/ex3d.png)
+![2D example](https://github.com/Fernandohf/NURBS/blob/master/media/2dexample.png)
+![3D example](https://github.com/Fernandohf/NURBS/blob/master/media/3dexample.png)
