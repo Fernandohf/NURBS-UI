@@ -563,7 +563,7 @@ labelSeg.grid(column=2, row=2, sticky=(W, N))
 spinboxSeg.grid(column=3, row=2, sticky=(E, N))
 label3D2D.grid(column=2, row=3, columnspan=2, sticky=(W, N))
 radio2D.grid(column=2, row=4, sticky=(W, N))
-radio3D.grid(column=2, row=4, sticky=(E, N))
+radio3D.grid(column=3, row=4, sticky=(E, N))
 
 labelExamples.grid(column=4, row=0, columnspan=2)
 
