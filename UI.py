@@ -236,16 +236,6 @@ Grid.rowconfigure(root, 0, weight=1)
 Grid.columnconfigure(root, 0, weight=1)
 root.resizable(FALSE, FALSE)
 
-# Styles
-
-# TODO
-# style = ttk.Style(root)
-# style.theme_use('clam')
-# styleFrame = ttk.Style().configure('TFrame', backgroud="white")
-# styleEntries = ttk.Style().configure('TFrame', backgroud="white")
-# styleButtons = ttk.Style().configure('TFrame', backgroud="white")
-# styleLabels = ttk.Style().configure('TFrame', backgroud="white")
-
 # Global Variables
 initialPoints3D = numpy.array(
     [(28, 44, 6), (20, 6, 5), (40, -10, 0), (68, 0, 2),
@@ -551,9 +541,7 @@ canvasPoints.create_window((0, 0), window=framePoints, anchor="nw")
 
 labelMainPoints.grid(column=0, row=0, sticky=(W, N), columnspan=3)
 framePButtons.grid(column=0, row=13, sticky=(N, W))
-# .grid(column=0,row=13,  sticky=(W,S))
 buttonPlusP.pack(side=LEFT, fill=BOTH, expand=YES)
-# .grid(column=1,row=13, sticky=(E,S))
 buttonMinusP.pack(side=LEFT, fill=BOTH, expand=YES)
 
 labelSettings.grid(column=2, row=0, columnspan=2, sticky=(W, N))
