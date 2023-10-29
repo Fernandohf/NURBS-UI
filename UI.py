@@ -20,7 +20,7 @@ class UIVariables:
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.master)
         self.points = points
         if seg is None:
-            self.nseg = 200
+            self.nseg = 250
         else:
             self.nseg = seg
         if seg is None:
